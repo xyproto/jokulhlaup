@@ -11,8 +11,8 @@ import (
 // The default settings for Mindfish content pages
 func MindfishBaseCP(state *UserState) *ContentPage {
 	cp := DefaultCP(state)
-	cp.Title = "MindFish The"
-	cp.Subtitle = "Band"
+	cp.Title = "MindFish Hi"
+	cp.Subtitle = "There"
 
 	y := time.Now().Year()
 
@@ -55,7 +55,7 @@ func MindfishBaseTitleCP(contentTitle string, userState *UserState) *ContentPage
 func OverviewCP(userState *UserState, url string) *ContentPage {
 	cp := MindfishBaseCP(userState)
 	cp.ContentTitle = "About"
-	cp.ContentHTML = `Mindfish is an electro-rock band.`
+	cp.ContentHTML = `Yet to come`
 	cp.Url = url
 	return cp
 }
