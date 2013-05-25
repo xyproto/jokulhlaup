@@ -54,8 +54,8 @@ func MindfishBaseTitleCP(contentTitle string, userState *UserState) *ContentPage
 
 func OverviewCP(userState *UserState, url string) *ContentPage {
 	cp := MindfishBaseCP(userState)
-	cp.ContentTitle = "Om"
-	cp.ContentHTML = `Mindfish 2 - under utvikling`
+	cp.ContentTitle = "About"
+	cp.ContentHTML = `Mindfish is an electro-rock band.`
 	cp.Url = url
 	return cp
 }
@@ -63,7 +63,7 @@ func OverviewCP(userState *UserState, url string) *ContentPage {
 func TextCP(userState *UserState, url string) *ContentPage {
 	apc := MindfishBaseCP(userState)
 	apc.ContentTitle = "Text"
-	apc.ContentHTML = `<p id='textparagraph'>Hei<br/>der<br/></p>`
+	apc.ContentHTML = `<p id='textparagraph'>Hi<br/>there<br/></p>`
 	apc.Url = url
 	return apc
 }
@@ -71,12 +71,11 @@ func TextCP(userState *UserState, url string) *ContentPage {
 // This is where the possibilities for the menu are listed
 func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 	links := []string{
-		"Om:/",
-		"Logg inn:/login",
-		"Registrer:/register",
-		"Logg ut:/logout",
+		"About:/",
+		"Log in:/login",
+		"Register:/register",
+		"Log out:/logout",
 		"Admin:/admin",
-		"Timer:/ftls",
 		"Wiki:/wiki",
 	}
 	return Links2menuEntries(links)
