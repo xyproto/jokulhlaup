@@ -1,7 +1,7 @@
-The website for Mindfish
+The website for Jøkulhlaup
 =======================
 
-The beginnings of a website for Mindfish
+The beginnings of a website for Jøkulhlaup
 
 License
 =======

@@ -3,7 +3,7 @@ SOURCE=
 for f in *.go ../browserspeak/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go; do
   SOURCE+="$f "
 done
-BIN=mindfishweb
+BIN=jokulhlaupweb
 PIDFILE=/tmp/$BIN.pid
 LOG=errors.err
 M5=nop
@@ -30,7 +30,7 @@ while true; do
     clear
     date
     echo
-    echo -n 'Recompiling Mindfish...'
+    echo -n 'Recompiling Jøkulhlaup...'
     [ -e $LOG ] && rm $LOG
     go build -o $BIN > $LOG
     if [ "$(wc -c $LOG | cut -d' ' -f1)" == '0' ]; then
