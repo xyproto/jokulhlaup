@@ -6,12 +6,13 @@ import (
 
 	. "github.com/xyproto/genericsite"
 	. "github.com/xyproto/siteengines"
+	"github.com/xyproto/permissions"
 )
 
 // TODO: Font for headline: IM Fell Double Pica SC
 
 // The default settings for Jokulhlaup content pages
-func JokulhlaupBaseCP(state *UserState) *ContentPage {
+func JokulhlaupBaseCP(state *permissions.UserState) *ContentPage {
 	cp := DefaultCP(state)
 	cp.Title = "Jøkulhlaup ."
 	cp.Subtitle = "."
@@ -48,13 +49,13 @@ func JokulhlaupBaseCP(state *UserState) *ContentPage {
 }
 
 // Returns a JokulhlaupBaseCP with the contentTitle set
-func JokulhlaupBaseTitleCP(contentTitle string, userState *UserState) *ContentPage {
+func JokulhlaupBaseTitleCP(contentTitle string, userState *permissions.UserState) *ContentPage {
 	cp := JokulhlaupBaseCP(userState)
 	cp.ContentTitle = contentTitle
 	return cp
 }
 
-func OverviewCP(userState *UserState, url string) *ContentPage {
+func OverviewCP(userState *permissions.UserState, url string) *ContentPage {
 	cp := JokulhlaupBaseCP(userState)
 	cp.ContentTitle = `<a href="http://snl.no/j%C3%B8kulhlaup">About</a>`
 	cp.ContentHTML = `<img src="http://upload.wikimedia.org/wikipedia/commons/b/b3/Hubbard_Glacier_August_14.2002.jpg">`
@@ -62,7 +63,7 @@ func OverviewCP(userState *UserState, url string) *ContentPage {
 	return cp
 }
 
-func TextCP(userState *UserState, url string) *ContentPage {
+func TextCP(userState *permissions.UserState, url string) *ContentPage {
 	apc := JokulhlaupBaseCP(userState)
 	apc.ContentTitle = "Text"
 	apc.ContentHTML = `<p id='textparagraph'>Hi<br/>there<br/></p>`
@@ -85,7 +86,7 @@ func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 
 // Routing for the archlinux.no webpage
 // Admin, search and user management is already provided
-func ServeJokulhlaup(userState *UserState, jquerypath string) MenuEntries {
+func ServeJokulhlaup(userState *permissions.UserState, jquerypath string) MenuEntries {
 	cps := []ContentPage{
 		*OverviewCP(userState, "/"),
 		*TextCP(userState, "/text"),
