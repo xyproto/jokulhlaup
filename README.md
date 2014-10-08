@@ -1,13 +1,4 @@
-The website for Jøkulhlaup
-=======================
+dashboard
+=========
 
-TODO: Switch over to dashboard/skeleton as a new beginning.
-
-The beginnings of a website for Jøkulhlaup
-
-License
-=======
-
-MIT licensed
-
-Alexander Rødseth, 2013
+Anything dashboardy - calendars, feeds, plans, todos, graphs, servers, studies, projects, career, messages
